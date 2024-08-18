@@ -1,4 +1,4 @@
-from motor import Motor
+from motor_driver.motor import Motor
 import math
 import time
 
