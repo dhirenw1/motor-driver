@@ -1,4 +1,4 @@
-from motor_driver.motor import Motor
+from motor import Motor
 import math
 import time
 
@@ -11,14 +11,12 @@ def execute_app():
     # for bags in range(30): 
     while True:
         
-        m1.set_position(10)
+        m1.set_rel_position(33)
         # m1.set_position(4*math.pi + math.pi / 16 * bags)
-        while m1.motor_command_done() is not True:
-            pass
+        m1.wait()
         # m1.set_position(4*math.pi / 2 - math.pi / 16 * bags)
-        m1.set_position(-10)
-        while m1.motor_command_done() is not True:
-            pass
+        m1.set_rel_position(-33)
+        m1.wait()
 
 def handle_cleanup():
     m1.stop()

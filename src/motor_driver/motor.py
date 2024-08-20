@@ -156,6 +156,10 @@ class Motor:
             return True
         else:
             return False
+            
+    def wait(self):
+        while self.motor_command_done() is False:
+            pass
 
     def reset_current_alarm(self):
         try:
